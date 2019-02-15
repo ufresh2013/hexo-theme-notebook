@@ -1,0 +1,7 @@
+<% if(toc(page.content).length !== 0) { %>
+  <div id="toc" class="toc-article">
+    <h1 class="title"><a href="/"><%=config.title%></a></h1>
+    <!--<strong class="toc-title"><%= __('posts_list') %></strong>-->
+    <%- toc(page.content, {list_number: false}) %>
+  </div>
+<% } %>

@@ -1,0 +1,87 @@
+<%
+  if (theme.inverse_sort) {
+      var posts = site.posts.sort('date', -1) ;
+  } else {
+      var posts = site.posts.sort('date', 1);
+  }
+%>
+
+<div class="tab">
+  <h1><a href="/"><%=config.title%></a></h1>
+  <a class="tab-search" href="/search/"><svg viewBox="64 64 896 896" class="" data-icon="search" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0 0 11.6 0l43.6-43.5a8.2 8.2 0 0 0 0-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z"></path></svg>搜索</a>
+  <% site.categories.sort('name').each(function(cat){ %>
+    <a class="tab-title" id="#<%= cat.name %>" href="/#<%= cat.name %>"><%= cat.name %></a>
+  <% }); %>
+  
+  
+</div>
+<div class="section">
+  <% site.categories.sort('name').each(function(cat){ %>
+      <div class="recent-posts">
+        <a class="post-title" id="<%= cat.name %>"><%= cat.name %></a>
+        <ul>                                
+          <% posts.each(function(it){ %>
+              <% if (it.categories.length == 1 && it.categories.data[0]._id == cat._id){ %>
+                  <li class="post-list-item">
+                    <a href="<%= config.root %><%= it.path %>"><%= it.title %></a>
+                    <span><%=date(it.date, 'YYYY-MM')%></span>
+                  </li>
+              <% } %>
+          <% }); %>
+        </ul>
+      </div>
+  <% }); %>
+</div>
+<script>
+  // 监听url hash值变化
+  var posts = document.getElementsByClassName('recent-posts');
+  var tabs = document.getElementsByClassName('tab-title');
+  var isClick = false;
+  
+
+  function hashChange(){
+    var hash = decodeURIComponent(location.hash);
+    if (hash){
+      document.getElementById(hash).classList.add('tab-active');
+    } else {
+      document.getElementsByClassName('tab-title')[0].classList.add('tab-active');
+    }
+  }
+
+  hashChange();
+  window.onhashchange = function(){
+    for(var j = 0; j < tabs.length; j++){
+      tabs[j].classList.remove('tab-active');
+    }
+    hashChange();
+    isClick = true;
+    return false;
+  }
+  
+
+  // 计算每个section的偏移高度
+  // 监听页面滚动，改变tab样式
+  var tabs_arr = [];
+  for (var i = 0; i < posts.length; i++) {
+    tabs_arr.push(posts[i].offsetTop + 40);
+  }
+
+  window.onscroll = function(){
+    var height = document.documentElement.scrollTop;
+    if (isClick){
+      isClick = false;
+      return false;
+    }
+    for (var i = 0; i < tabs_arr.length; i++){
+      if (tabs_arr[i] > height){
+
+        for(var j = 0; j < tabs.length; j++){
+          tabs[j].classList.remove('tab-active');
+        }
+        document.getElementsByClassName('tab-title')[i].classList.add('tab-active');
+        break;
+
+      } 
+    }
+  }
+</script>
