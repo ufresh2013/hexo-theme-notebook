@@ -11,6 +11,7 @@ git clone https://github.com/ufresh2013/hexo-theme-notebook.git
 npm install
 ```
 修改根目录下的`_config.yml`内的`theme`值为`hexo-theme-notebook`
+
 <br/>
 
 
@@ -27,20 +28,16 @@ npm install
 <br/>
 
 ### 搜索
-#### 1. 安装插件
-在根目录下安装
+1. 在根目录下安装插件
 ```
 npm install hexo-generator-tag --save-dev
 npm install hexo-generator-search --save-dev
 ```
 
-#### 2. 添加页面
-手动在/source下创建目录和index.md文件
+2. 手动在/source下创建目录和index.md文件
 ```
 ├── source
 |      └── _posts
-|      └── about
-|            └── index.md
 |      └── search
 |            └── index.md
 |      └── favicon.ico
@@ -55,9 +52,10 @@ type: search
 ---
 ```
 
-#### 3. 生成搜索文件
+3. 生成搜索文件
 ```
 hexo g
+hexo server
 ```
 <br/>
 
