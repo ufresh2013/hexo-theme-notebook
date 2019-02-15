@@ -587,7 +587,7 @@ body {
 .toc-article ol,
 .toc-article ul {
   list-style: none;
-  padding-left: 10px;
+  padding: 0 10px;
 }
 .toc-article ol ol,
 .toc-article ul ol,
@@ -636,9 +636,9 @@ body {
 }
 pre,
 code {
-  background-color: #f6f6f6;
-  font-family: "Source Code Pro", "courier new", "微软雅黑", "Input Mono", "PT Mono", Consolas, Monaco, Menlo, monospace;
-  font-weight: normal;
+  background-color: #f6f8fa;
+  font-family: Menlo,Monaco,Consolas,Courier New,monospace;
+  font-weight: 300;
 }
 pre {
   padding: 10px;
