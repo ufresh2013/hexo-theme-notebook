@@ -11,7 +11,7 @@ git clone https://github.com/ufresh2013/hexo-theme-notebook.git
 npm install
 ```
 修改根目录下的`_config.yml`内的`theme`值为`hexo-theme-notebook`
-
+<br/>
 
 ### 创建页面
 ```
@@ -38,6 +38,8 @@ layout: page
 type: search
 ---
 ```
+<br/>
+
 
 ### 文章声明
 文章列表根据category分类，每篇文章都要加上`category`，且只写一个值
