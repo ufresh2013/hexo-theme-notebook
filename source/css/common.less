@@ -1,6 +1,6 @@
 html, body {
   font-size: 14px;
-  font-weight: 300;
+  font-weight: 400;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimSun, sans-serif;
 }
@@ -14,32 +14,35 @@ body {
 }
 
 .container {
-  padding: 0 10px;
   margin: 0 auto 60px;
   min-height: calc(~"100vh - 120px");
 }
+.inner{
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  min-height: 100%;
+}
 .section{
-  padding: 0 30px 30px 280px;
-  width: 100%;
+  padding: 60px 20px 20px;
 }
 .recent-posts {
   max-width: 800px;
   margin: 0 auto;
   .post-title {
-    font-size: 13px;
+    font-size: 16px;
     line-height: 2;
-    color: #1890ff;
     display: block;
     padding-top: 30px;
+    font-weight: bold;
   }
   ul {
     list-style: none;
     padding: 0;
   }
   li {
-    line-height: 1.5;
-    padding: 5px 0;
-    font-size: 13px;
+    line-height: 2.5;
+    font-size: 14px;
   }
   li span{
     color: rgb(153, 153, 153);
@@ -238,7 +241,7 @@ body {
   display: block;
   display: flex;
   font-size: 0;
-  margin: 10px auto;
+  margin: 50px auto 0;
   max-width: @post-width;
   padding: 0 10px;
   position: relative;
@@ -283,7 +286,7 @@ body {
 }
 
 .search-content {
-  padding-top: 30px;
+  padding-top: 50px;
   max-width: 800px;
   margin: 0 auto;
   .pure-input {
@@ -347,7 +350,7 @@ body {
       font-family: 'Montserrat', sans-serif;
       text-transform: uppercase;
       font-size: 0.7rem;
-      font-weight: 300;
+      font-weight: 400;
       letter-spacing: 2px;
       @media screen and (min-width: 476px) {
         position: absolute;
@@ -360,53 +363,50 @@ body {
 
 .tab{
   position: fixed;
-  left: 0;
+  padding: 15px 15px 10px;
   top: 0;
-  padding: 15px 0;
-  border-right: 1px solid #dedede7a;
-  height: 100%;
-
-  .tab-title{
-    display: block;
-    width: 220px;
-    height: 32px;
-    padding: 0 15px;
-    line-height: 32px;
-    font-size: 13px;
-  }
-
-  .tab-search{
-    height: 32px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background: #ffffffc2;
+  box-shadow: 0px 1px 10px 0px #d6d6d6;
+  font-size: 0;
+  span{
+    border-right: 1px solid #aaa;
     display: inline-block;
-    background: #eaeaea75;
-    width: 100%;
-    line-height: 32px;
-    font-size: 13px;
-    padding: 0 15px;
-    svg{
-      vertical-align: middle;
-      margin-right: 5px;
-      position: relative;
-      top: -1px;
-    }
+    vertical-align: middle;
+    height: 16px;
+  }
+  a{
+    padding: 0 8px;
+    color: #151515;
+    font-size: 14px;
+    line-height: 16px;
+    margin: 0 8px;
+  }
+  img{
+    width: 25px;
+    vertical-align: middle;
   }
   .tab-active, .tab-search-active{
-    background: #e6f7ff;
-    border-right: 3px solid #1890ff;
+    background: #60c13d;
+    color: #fff;
   }
 }
 
 .toc-article {
-  position: fixed;
-  z-index: 10;
-  left: 0;
-  top: 0;
-  border-right: 1px solid #dedede7a;
-  padding: 15px 0;
-  width: 250px;
-  font-size: 13px;
   overflow-y: auto;
-  height: 100%;
+  border-left: 1px solid #e8e8e8;
+  font-size: 13px;
+  position: fixed;
+  top: 80px;
+  right: 50%;
+  margin-right: -680px;
+  width: 250px;
+  .toc-link-active{
+    color: #60c13d;
+    background: #ebedef;
+  }
   .title{
     margin-bottom: 15px;
   }
@@ -423,28 +423,10 @@ body {
 
 // 576px
 @media screen and (max-width:767px){
-  .section{
-    padding: 0;
-  }
-  .tab{
-    position: static;
-    border: none;
-    padding: 15px 0 0;
-    .tab-search{
-      display: none;
-    }
-    .tab-title{
-      display: none;
-    }
-
-  }
   .recent-posts:first-child{
     .post-title{
       padding-top: 0;
     }
-  }
-  h1{
-    padding: 0;
   }
   .toc{
     height: auto;

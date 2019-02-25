@@ -6,9 +6,18 @@
 <body>
   <div class="container" id="content-outer">
     <div class="inner" id="content-inner">
+        <div class="tab">
+            <img src="/left.png" />
+            <span><a href="/"><%=config.title%></a></span>
+            <span><a class="tab-search" href="/search/">搜索</a></span>
+            <% site.categories.sort('name').each(function(cat){ %>
+              <span><a class="tab-title" id="#<%= cat.name %>" href="/#<%= cat.name %>"><%= cat.name %></a></span>
+            <% }); %>
+          </div>
       <%- body %>
     </div>
   </div>
   <%-partial('partials/scripts')%>
 </body>
 </html>
+

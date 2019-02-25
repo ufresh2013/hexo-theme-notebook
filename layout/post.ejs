@@ -15,14 +15,58 @@
     <div class="post-content">
       <%-page.content%>
     </div>
-    <div class="post-tags">
-          <%- list_tags(page.tags, {
-              show_count: false,
-              class: 'article-tag'
-            }) %>
-    </div>
   </article>
   <%- partial('partials/prenext') %>
 </div>
 <%- partial('partials/disqus') %>
 
+<script>
+var link = document.getElementsByClassName('toc-link');
+var hash = decodeURIComponent(location.hash);
+if (hash){
+} else {
+  link[0].classList.add('toc-link-active');
+}
+
+var h3 = document.getElementsByTagName('h3');
+var h4 = document.getElementsByTagName('h4');
+var h5 = document.getElementsByTagName('h5');
+var link_arr = [];
+function addToArr(arr){
+  for(var i = 0; i < arr.length; i++){
+    link_arr.push(arr[i].offsetTop);
+  }
+}
+addToArr(h3);
+addToArr(h4);
+addToArr(h5);
+
+
+var compare = function (x, y) {
+    if (x < y) {
+        return -1;
+    } else if (x > y) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+link_arr.sort(compare);
+
+
+
+window.onscroll = function(){
+  var height = document.documentElement.scrollTop;
+  for (var i = 0; i < link_arr.length; i++){
+    if (link_arr[i] > height){
+      for(var j = 0; j < link.length; j++){
+        link[j].classList.remove('toc-link-active');
+      }
+      document.getElementsByClassName('toc-link')[i].classList.add('toc-link-active');
+      break;
+    } 
+  }
+}
+
+</script>
