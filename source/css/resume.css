@@ -1,0 +1,277 @@
+html{
+    letter-spacing: 0.2px;
+    color: #656D78;
+}
+.desc,a {
+    font-size:14px;
+    color:#4788c7;
+    -webkit-transition:color 0.3s;
+    -moz-transition:color 0.3s;
+    transition:color 0.3s;
+    font-weight: normal;
+}
+
+.column .eighth {
+    float:left;
+    width:25%
+}
+
+h1,h2,h3,h4,h5 {
+    margin:0;
+    color:#2E313C;
+}
+h2{
+    margin-bottom: 10px;
+}
+#me h2{
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+h4 {
+    font-size:1rem;
+    line-height:1.3em;
+}
+
+p {
+    margin:0 auto;
+}
+blockquote {
+    margin:0;
+    line-height:1.2em;
+}
+blockquote p {
+    color:#838383;
+    margin:0.3rem 0 0.5rem
+}
+
+ul {
+    margin:0;
+    text-align:left;
+}
+
+a {
+    text-decoration:none;
+}
+
+.button {
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    appearance:none;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    border-radius:3px;
+    border:none;
+    color:#fff;
+    cursor:pointer;
+    display:block;
+    font-size:1rem;
+    font-weight:600;
+    padding:0.7rem 1.5rem;
+    vertical-align:middle;
+    white-space:nowrap
+}
+
+.button:hover {
+    text-decoration:none
+}
+
+.clearfix:before,.clearfix:after {
+    content:" ";
+    display:table
+}
+.clearfix:after {
+    clear:both
+}
+.clearfix {
+    *zoom:1
+}
+
+
+.container section {
+    margin-bottom:1em
+}
+.container section article {
+    padding-top:5px;
+    padding-bottom:5px
+}
+.container section article p {
+    margin:0.5em 0
+}
+
+.container section .title {
+    margin-top:45px;
+}
+
+/*侧栏*/
+.sidebar {
+    max-height:55px;
+    overflow:hidden;
+    -webkit-transition:max-height 0.5s;
+    -moz-transition:max-height 0.5s;
+    transition:max-height 0.5s
+}
+.sidebar section:first-child {
+    margin-top:10px
+}
+.sidebar section article {
+    padding:10px 0
+}
+.sidebar section article a {
+    display:block
+}
+.sidebar .title {
+    padding:0.5em 1em;
+    text-align:center
+}
+.sidebar .icon {
+    width:50px;
+    text-align:center;
+    display:inline-block
+}
+.sidebar .icon.full {
+    width:100%;
+    -webkit-transition:width 0.5s;
+    -moz-transition:width 0.5s;
+    transition:width 0.5s
+}
+.sidebar .logo {
+    width:32px;
+    border-radius:5px
+}
+
+.sidebar {
+    background:#bed194;
+    color:#fff
+}
+
+.sidebar section {
+    margin-top:10px
+}
+.sidebar section article:hover {
+    background-color:#98a776
+}
+.sidebar a {
+    color:#fff
+}
+/*内容*/
+.container {
+    margin-top: 110px;
+    width: 100%;
+    max-width: 820px;
+    padding: 0 10px;
+}
+
+.container section article p {
+    line-height:1.3em
+}
+.container section article ul {
+    list-style:none;
+    padding:.4em 0
+}
+.container section article ul li {
+    border-left:#4788c7 2px solid;
+    line-height: 1.2;
+    margin: 15px 0;
+    padding-left:1em;
+    -webkit-transition:border 0.3s;
+    -moz-transition:border 0.3s;
+    transition:border 0.3s
+}
+.container section article ul li:hover {
+    border-left-width:7px
+}
+.container section article .desc {
+    position:relative;
+    top:2px;
+    float:right;
+}
+#experience article div{
+  width: 100%
+}
+/* 二维码*/
+#presentation{
+  position: relative;
+}
+#presentation img{
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  bottom: 0;
+  right: 0
+}
+/*适配*/
+@media (min-width:960px) {
+    .hide-when-small {
+        display:none
+    }
+
+    .column {
+        float:left;
+        margin:0;
+        padding-right:1rem
+    }
+
+    .column.full {
+        width:100%
+    }
+    .column.third {
+        width:33.3%
+    }
+    .column.two-thirds {
+        width:66.7%
+    }
+    .column.half {
+        width:50%
+    }
+
+    .column.three-fourth {
+        width:100%
+    }
+
+    .column.flow-opposite {
+        float:right
+    }
+    .column.eighth {
+        width:12.5%
+    }
+
+    h1 {
+        font-size:1.5rem
+    }
+
+    ul {
+        display:inline-block
+    }
+
+    .button {
+        display:inline-block;
+        font-size:0.9rem
+    }
+
+    .sidebar {
+        position:fixed;
+        left:0;
+        top:0;
+        bottom:0;
+        width:200px;
+        max-height:none
+    }
+    .sidebar:hover .title {
+        opacity:1
+    }
+    .sidebar section {
+        width:200px
+    }
+    .sidebar .title {
+        opacity:0;
+        -webkit-transition:opacity 0.3s;
+        -moz-transition:opacity 0.3s;
+        transition:opacity 0.3s
+    }
+    .sidebar .icon.full {
+        width:200px
+    }
+}
