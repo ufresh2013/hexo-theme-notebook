@@ -550,7 +550,7 @@ body {
   vertical-align: middle;
   height: 16px;
 }
-.tab a {
+.tab span a {
   padding: 0 8px;
   color: #151515;
   font-size: 14px;
@@ -559,7 +559,7 @@ body {
 }
 .tab img {
   width: 25px;
-  vertical-align: middle;
+  vertical-align: -webkit-baseline-middle;
 }
 .tab .tab-active,
 .tab .tab-search-active {
@@ -615,6 +615,13 @@ body {
   .toc-article ol {
     display: none;
   }
+  .tab span{
+    display: none;
+  }
+  .tab span:first-child{
+    display: block;
+  }
+
 }
 pre,
 code {
