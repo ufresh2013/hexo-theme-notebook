@@ -30,7 +30,10 @@ ol,
 ul,
 dd,
 dl {
-  padding-left: 2rem;
+  padding-left: 1.2rem;
+}
+.post-content li{
+  margin-bottom: 5px;
 }
 h2 {
   font-size: 1.5rem;
@@ -49,7 +52,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0.5rem 0;
+  margin: 0.5rem 0 10px;
   line-height: 1.5rem;
   font-weight: 500;
 }
@@ -67,7 +70,11 @@ a {
   color: inherit;
 }
 p {
-  margin: 0.75rem 0;
+  line-height: 2.1;
+  margin: 10px 0 20px;
+}
+p+ul{
+  margin-top: -10px;
 }
 a:link,
 a:visited,
@@ -285,14 +292,14 @@ body {
 .post .post-content table th {
   font-weight: bold;
   border: 1px solid #cccccc;
-  text-align: left;
+  text-align: left !important;
   margin: 0;
   padding: 6px 13px;
   background-color: #f6f8fa;
 }
 .post .post-content table td {
   border: 1px solid #cccccc;
-  text-align: left;
+  text-align: left !important;
   margin: 0;
   padding: 6px 13px;
 }
@@ -303,6 +310,7 @@ body {
 .post .post-content table th:last-child,
 .post .post-content table td:last-child {
   margin-bottom: 0;
+  text-align: left !important;
 }
 .post .post-content .note {
   position: relative;

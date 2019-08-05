@@ -95,7 +95,7 @@ a {
 }
 .container section article {
     padding-top:5px;
-    padding-bottom:5px
+    padding-bottom:20px
 }
 .container section article p {
     margin:0.5em 0
@@ -201,6 +201,13 @@ a {
   position: absolute;
   bottom: 0;
   right: 0
+}
+#presentation span{
+  display: inline-block;
+  margin: 10px 0 0;
+}
+#presentation article{
+  padding: 25px 0;
 }
 /*适配*/
 @media (min-width:960px) {

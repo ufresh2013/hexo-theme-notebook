@@ -6,7 +6,7 @@ language: zh-Hans
 menu:
   home: /
   search: /search
-  about: /about
+  aboutme: /aboutme
 
 # stylesheets loaded in the <head>
 stylesheets:

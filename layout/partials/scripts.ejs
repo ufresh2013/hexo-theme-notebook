@@ -129,3 +129,12 @@
       searchFunc(path, 'local-search-input', 'local-search-result');
     </script>
     <% } %>
+
+    <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js"></script>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // listen to any DOM change and automatically perform spacing via MutationObserver()
+        pangu.autoSpacingPage();
+      });
+    </script>
