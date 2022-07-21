@@ -44,7 +44,7 @@ blockquote {
 }
 blockquote p {
     color:#838383;
-    margin:0.3rem 0 0.5rem
+    margin:0.1rem 0 0.1rem
 }
 
 ul {
@@ -94,15 +94,15 @@ a {
     margin-bottom:1em
 }
 .container section article {
-    padding-top:5px;
-    padding-bottom:20px
+    padding-top:3px;
+    padding-bottom:15px
 }
 .container section article p {
-    margin:0.5em 0
+    margin:10px 0 0;
 }
 
 .container section .title {
-    margin-top:45px;
+    margin-top:40px;
 }
 
 /*侧栏*/
@@ -173,7 +173,7 @@ a {
 }
 .container section article ul li {
     border-left:#4788c7 2px solid;
-    line-height: 1.2;
+    line-height: 1.5;
     margin: 15px 0;
     padding-left:1em;
     -webkit-transition:border 0.3s;
@@ -207,7 +207,10 @@ a {
   margin: 10px 0 0;
 }
 #presentation article{
-  padding: 25px 0;
+  padding: 7px 0 30px;
+}
+#presentation a {
+    font-size: 1.1rem;
 }
 /*适配*/
 @media (min-width:960px) {

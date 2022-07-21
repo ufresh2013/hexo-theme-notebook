@@ -9,7 +9,7 @@
         <div class="tab">
             <a href="/"><img src="/left.png" /></a>
             <span><a href="/"><%=config.title%></a></span>
-            <span><a class="tab-search" href="/search/">搜索</a></span>
+            <!-- <span><a class="tab-search" href="/search/">搜索</a></span> -->
             <% site.categories.sort('name').each(function(cat){ %>
               <span><a class="tab-title" id="#<%= cat.name %>" href="/#<%= cat.name %>"><%= cat.name %></a></span>
             <% }); %>

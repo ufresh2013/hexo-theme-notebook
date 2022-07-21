@@ -137,4 +137,14 @@
         // listen to any DOM change and automatically perform spacing via MutationObserver()
         pangu.autoSpacingPage();
       });
+
+      window.addEventListener("load", event => {
+        // 判断浏览器是否支持
+        if ("serviceWorker" in navigator) {
+          window.navigator.serviceWorker
+            .register("/sw.js", {
+              scope: "/"
+            })
+        }
+      });
     </script>
